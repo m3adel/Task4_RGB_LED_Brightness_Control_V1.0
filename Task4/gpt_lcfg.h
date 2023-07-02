@@ -114,7 +114,6 @@ typedef struct
 	u64                            u64_a_timerStartValue;
   GPTM_enTimerInterruptMode_t    en_a_timerInterruptMode;
 	GPTM_enTimerInterruptNumber_t  en_a_timerInterruptNumber;
-//  GPTM_vpfTimerInterruptAction_t vpf_a_timerInterruptAction;
 	
 } GPTM_stTimerLinkConfig_t;
 

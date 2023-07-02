@@ -47,7 +47,7 @@ void APP_start(void)
 		}
 		else
 		{
-			//nothing
+			//do nothing
 		}
 		switch(Counter)
 		{

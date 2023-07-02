@@ -1,7 +1,7 @@
 /*
  * COMMON.h
  *
- *  Created on: june 06, 2023
+ *  Created on: june 09, 2023
  *  Author: Mohamed Abdelsalam - https://github.com/m3adel
 
  */
@@ -52,7 +52,6 @@ typedef _Bool boolean;
 #define CLR_BIT(REG,BIT) (REG&=(~(1UL<<BIT)))
 
 /* get value of a certain bit in any register */
-//#define GET_BIT_STATUS(REGISTER,BIT_NUMBER)		(0UL != ((REGISTER) & (1UL << (BIT_NUMBER))))
 #define TOG_BIT( REGISTER, BIT_NUMBER )		REGISTER = ( REGISTER ^ ( 1 << BIT_NUMBER ) )
 #define GET_BIT_STATUS( REGISTER, BIT_NUMBER )		( ( REGISTER & ( 1 << BIT_NUMBER ) ) >> BIT_NUMBER ) // ( ( REGISTER >> BIT_NUMBER ) & 1 )
 #define UPPER_NIBBLE( REGISTER, DATA )		( REGISTER = ( REGISTER & 0x0F)  | ( DATA & 0xF0 ) )

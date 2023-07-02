@@ -32,7 +32,7 @@
 #define GPT_PRIVATE_H_
 
 /*******************************************************************************************************************************************************************/
-/* GPTM Base Address Macro */
+
 
 /* 
  * The offset listed is a hexadecimal increment to the register's address,
@@ -51,6 +51,7 @@
  * 32/64-bit Wide Timer 4: 0x4004.E000
  * 32/64-bit Wide Timer 5: 0x4004.F000
  */
+//GPTM Base Address Macro// 
 #define GPTM_U32_BASE_ADDRESS( GPTM_U8_TIMER_ID )     ( GPTM_U8_TIMER_ID < GPTM_EN_WIDE_TIMER_2 ? ( ( 0x40030000 ) + ( ( GPTM_U8_TIMER_ID ) * ( 0x1000 ) ) ) : ( ( 0x4004C000 ) + ( ( GPTM_U8_TIMER_ID - GPTM_EN_WIDE_TIMER_2 ) * ( 0x1000 ) ) ) )
 
 /*******************************************************************************************************************************************************************/

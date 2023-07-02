@@ -7,30 +7,27 @@
 #include "pwm.h"
 #define PWM_PERIOD       500        //the frequency in ms
 str_gpio_config_t pin1;
-str_gpio_config_t pin2;
 #define PWM_Port1         F
-#define PWM_Port2         F
 #define PWM_Pin1          P3
-#define PWM_Pin2          P2
 volatile u64 PWM_count_ON=0;
 volatile u64 PWM_count_OFF=0;
-boolean PWM_Count=FALSE;
+boolean PWM_Flag = FALSE;
 extern GPTM_stTimerLinkConfig_t ast_gs_timersLinkConfig[2];
 void PWM_gen(void)
 {
 	//PWM_time on
-	if (PWM_Count ==  TRUE )
+	if (PWM_Flag ==  TRUE )
 	{
 		GPIO_write(pin1,HIGH);
 	//	GPIO_write(pin2,HIGH);
 	GPTM_setTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, PWM_count_ON, GPTM_EN_TIME_US );
-		PWM_Count = FALSE;
+		PWM_Flag = FALSE;
 	}
-	else if (PWM_Count == FALSE)
+	else if (PWM_Flag == FALSE)
 	{
 		GPIO_write(pin1,LOW);
 		GPTM_setTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, PWM_count_OFF, GPTM_EN_TIME_US );
-		PWM_Count = TRUE;
+		PWM_Flag = TRUE;
 	}
 
 	GPTM_clearInt( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED  );
@@ -55,7 +52,7 @@ void PWM_start (uint8_t duty_percent)
 	PWM_count_ON = u64_temp;
 	u64_temp = (u64)(((100-duty_percent)*PWM_PERIOD)*10);
 	PWM_count_OFF = u64_temp;
-	PWM_Count=FALSE;
+	PWM_Flag=FALSE;
 	
 	if(PWM_count_ON == 0)
 	{
@@ -71,7 +68,7 @@ void PWM_start (uint8_t duty_percent)
 	{
 	GPTM_setTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, PWM_count_ON, GPTM_EN_TIME_US );
 	GPTM_enableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED );
-	PWM_Count=FALSE;
+	PWM_Flag = FALSE;
 	GPIO_write(pin1,HIGH);
 	}
 }

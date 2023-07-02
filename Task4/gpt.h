@@ -48,7 +48,7 @@ typedef enum
 
 /*
  Name: GPTM_initialization
- Input: Pointer to Array of st TimerLinkConfig and u8 NumberOfTimers
+ Input: Struct of TimerLinkConfig
  Output: en Error or No Error
  Description: Function to initialize GPTM peripheral using Linking Configurations.
 */

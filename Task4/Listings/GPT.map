@@ -54,7 +54,7 @@ Section Cross References
     pwm.o(i.PWM_gen) refers to gpio.o(i.GPIO_write) for GPIO_write
     pwm.o(i.PWM_gen) refers to gpt.o(i.GPTM_setTimer) for GPTM_setTimer
     pwm.o(i.PWM_gen) refers to gpt.o(i.GPTM_clearInt) for GPTM_clearInt
-    pwm.o(i.PWM_gen) refers to pwm.o(.data) for PWM_Count
+    pwm.o(i.PWM_gen) refers to pwm.o(.data) for PWM_Flag
     pwm.o(i.PWM_init) refers to gpio.o(i.GPIO_init) for GPIO_init
     pwm.o(i.PWM_init) refers to gpt.o(i.GPTM_initialization) for GPTM_initialization
     pwm.o(i.PWM_init) refers to gpt.o(i.GPTM_setCallback) for GPTM_setCallback
@@ -684,17 +684,17 @@ Image Symbol Table
     .data                                    0x20000000   Section        4  gpt.o(.data)
     f32_gs_timerTickTime                     0x20000000   Data           4  gpt.o(.data)
     .data                                    0x20000008   Section       48  gpt_lcfg.o(.data)
-    .data                                    0x20000038   Section       33  pwm.o(.data)
-    .data                                    0x20000059   Section       11  app.o(.data)
-    Counter                                  0x20000063   Data           1  app.o(.data)
-    .bss                                     0x20000064   Section       96  gpt.o(.bss)
-    avpf_gs_timersInterruptsAction           0x20000064   Data          96  gpt.o(.bss)
-    .bss                                     0x200000c4   Section       96  libspace.o(.bss)
-    HEAP                                     0x20000128   Section        0  startup_tm4c123.o(HEAP)
-    STACK                                    0x20000128   Section      512  startup_tm4c123.o(STACK)
-    Heap_Mem                                 0x20000128   Data           0  startup_tm4c123.o(HEAP)
-    Stack_Mem                                0x20000128   Data         512  startup_tm4c123.o(STACK)
-    __initial_sp                             0x20000328   Data           0  startup_tm4c123.o(STACK)
+    .data                                    0x20000038   Section       25  pwm.o(.data)
+    .data                                    0x20000051   Section       11  app.o(.data)
+    Counter                                  0x2000005b   Data           1  app.o(.data)
+    .bss                                     0x2000005c   Section       96  gpt.o(.bss)
+    avpf_gs_timersInterruptsAction           0x2000005c   Data          96  gpt.o(.bss)
+    .bss                                     0x200000bc   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000120   Section        0  startup_tm4c123.o(HEAP)
+    STACK                                    0x20000120   Section      512  startup_tm4c123.o(STACK)
+    Heap_Mem                                 0x20000120   Data           0  startup_tm4c123.o(HEAP)
+    Stack_Mem                                0x20000120   Data         512  startup_tm4c123.o(STACK)
+    __initial_sp                             0x20000320   Data           0  startup_tm4c123.o(STACK)
 
     Global Symbols
 
@@ -999,14 +999,13 @@ Image Symbol Table
     Region$$Table$$Limit                     0x00003c08   Number         0  anon$$obj.o(Region$$Table)
     ast_gs_timersLinkConfig                  0x20000008   Data          48  gpt_lcfg.o(.data)
     pin1                                     0x20000038   Data           5  pwm.o(.data)
-    pin2                                     0x2000003d   Data           5  pwm.o(.data)
-    PWM_count_ON                             0x20000048   Data           8  pwm.o(.data)
-    PWM_count_OFF                            0x20000050   Data           8  pwm.o(.data)
-    PWM_Count                                0x20000058   Data           1  pwm.o(.data)
-    GREEN_LED                                0x20000059   Data           5  app.o(.data)
-    SW1                                      0x2000005e   Data           5  app.o(.data)
-    __libspace_start                         0x200000c4   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20000124   Data           0  libspace.o(.bss)
+    PWM_count_ON                             0x20000040   Data           8  pwm.o(.data)
+    PWM_count_OFF                            0x20000048   Data           8  pwm.o(.data)
+    PWM_Flag                                 0x20000050   Data           1  pwm.o(.data)
+    GREEN_LED                                0x20000051   Data           5  app.o(.data)
+    SW1                                      0x20000056   Data           5  app.o(.data)
+    __libspace_start                         0x200000bc   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x2000011c   Data           0  libspace.o(.bss)
 
 
 
@@ -1016,7 +1015,7 @@ Memory Map of the image
 
   Image Entry point : 0x0000030d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00003c6c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00003c64, Max: 0xffffffff, ABSOLUTE)
 
     Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00003c08, Max: 0xffffffff, ABSOLUTE)
 
@@ -1176,26 +1175,26 @@ Memory Map of the image
     0x00003be8   0x00003be8   0x00000020   Data   RO          858    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00003c08, Size: 0x00000064, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00003c08, Size: 0x0000005c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x00003c08   0x00000004   Data   RW          134    .data               gpt.o
     0x20000004   0x00003c0c   0x00000004   PAD
     0x20000008   0x00003c10   0x00000030   Data   RW          367    .data               gpt_lcfg.o
-    0x20000038   0x00003c40   0x00000021   Data   RW          443    .data               pwm.o
-    0x20000059   0x00003c61   0x0000000b   Data   RW          510    .data               app.o
+    0x20000038   0x00003c40   0x00000019   Data   RW          443    .data               pwm.o
+    0x20000051   0x00003c59   0x0000000b   Data   RW          510    .data               app.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000064, Load base: 0x00003c6c, Size: 0x000002c4, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x2000005c, Load base: 0x00003c64, Size: 0x000002c4, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000064        -       0x00000060   Zero   RW          133    .bss                gpt.o
-    0x200000c4        -       0x00000060   Zero   RW          716    .bss                c_w.l(libspace.o)
-    0x20000124   0x00003c6c   0x00000004   PAD
-    0x20000128        -       0x00000000   Zero   RW          539    HEAP                startup_tm4c123.o
-    0x20000128        -       0x00000200   Zero   RW          538    STACK               startup_tm4c123.o
+    0x2000005c        -       0x00000060   Zero   RW          133    .bss                gpt.o
+    0x200000bc        -       0x00000060   Zero   RW          716    .bss                c_w.l(libspace.o)
+    0x2000011c   0x00003c64   0x00000004   PAD
+    0x20000120        -       0x00000000   Zero   RW          539    HEAP                startup_tm4c123.o
+    0x20000120        -       0x00000200   Zero   RW          538    STACK               startup_tm4c123.o
 
 
 ==============================================================================
@@ -1212,12 +1211,12 @@ Image component sizes
          0          0          0         48          0       2754   gpt_lcfg.o
         42          0          0          0          0        981   led.o
         12          0          0          0          0      32093   main.o
-       404         50          0         33          0       2422   pwm.o
+       404         50          0         25          0       2368   pwm.o
        276         24        620          0        512       5476   startup_tm4c123.o
        152         40          0          0          0        621   system_tm4c123.o
 
     ----------------------------------------------------------------------
-      6928        390        652        100        608      67783   Object Totals
+      6928        390        652         92        608      67729   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          8          0          0          4          0          0   (incl. Padding)
 
@@ -1300,15 +1299,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     14572       1002        796        100        708      65567   Grand Totals
-     14572       1002        796        100        708      65567   ELF Image Totals
-     14572       1002        796        100          0          0   ROM Totals
+     14572       1002        796         92        708      65513   Grand Totals
+     14572       1002        796         92        708      65513   ELF Image Totals
+     14572       1002        796         92          0          0   ROM Totals
 
 ==============================================================================
 
     Total RO  Size (Code + RO Data)                15368 (  15.01kB)
-    Total RW  Size (RW Data + ZI Data)               808 (   0.79kB)
-    Total ROM Size (Code + RO Data + RW Data)      15468 (  15.11kB)
+    Total RW  Size (RW Data + ZI Data)               800 (   0.78kB)
+    Total ROM Size (Code + RO Data + RW Data)      15460 (  15.10kB)
 
 ==============================================================================
 

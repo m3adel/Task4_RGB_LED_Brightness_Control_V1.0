@@ -36,47 +36,7 @@
 /*---------------------------------------------------------/
 /- LOCAL MACROS ------------------------------------------/
 /---------------------------------------------------------*/
-///*Module Registers*/
 
-///*
-//Base Addresses Registers For General Purpose Timers
-//*/
-//#define GPTM(x)		(x<GPT_CH8?((0x40030000)+((x)*(0x1000))):((0x4004C000)+((x-GPT_CH8)*(0x1000))))
-
-//#define GPT_idx(x)(y)		(x<GPT_CH8?((2*x)+((y)*(0x1000))):((0x4004C000)+((x-GPT_CH8)*(0x1000))))
-///*------------------------------------------------------------------------------------------------------*/
-///*Macros*/
-//#define GPTMCFG(y)			(*((volatile uint32_t*)((GPTM(y))+(0x0000))))				//GPTM Configuration
-//#define GPTMTAMR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x004))))				//GPTM Timer A Mode 
-//#define GPTMTBMR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x008))))				//GPTM Timer B Mode
-//#define GPTMCTL(y)			(*((volatile uint32_t*)((GPTM(y))+(0x00C))))				//GPTM Control
-//#define GPTMSYNC(y)			(*((volatile uint32_t*)((GPTM(y))+(0x010))))				//GPTM Synchronize
-//#define GPTMIMR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x018))))				//GPTM Interrupt Mask
-//#define GPTMRIS(y)			(*((volatile uint32_t*)((GPTM(y))+(0x01C))))				//GPTM Raw Interrupt Status
-//#define GPTMMIS(y)			(*((volatile uint32_t*)((GPTM(y))+(0x020))))				//GPTM Masked Interrupt Status
-//#define GPTMICR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x024))))				//GPTM Interrupt Clear
-//#define GPTMTAILR(y)		(*((volatile uint32_t*)((GPTM(y))+(0x028))))				//GPTM Timer A Interval Load
-//#define GPTMTBILR(y)		(*((volatile uint32_t*)((GPTM(y))+(0x02C))))				//GPTM Timer B Interval Load
-//#define GPTMTAMATCHR(y)	(*((volatile uint32_t*)((GPTM(y))+(0x030))))				//GPTM Timer A Match 
-//#define GPTMTBMATCHR(y)	(*((volatile uint32_t*)((GPTM(y))+(0x034))))				//GPTM Timer B Match
-//#define GPTMTAPR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x038))))				//GPTM Timer A Prescale
-//#define GPTMTBPR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x03C))))				//GPTM Timer B Prescale
-//#define GPTMTAPMR(y)		(*((volatile uint32_t*)((GPTM(y))+(0x040))))				//GPTM TimerA Prescale Match
-//#define GPTMTBPMR(y)		(*((volatile uint32_t*)((GPTM(y))+(0x044))))				//GPTM TimerB Prescale Match
-//#define GPTMTAR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x048))))				//GPTM Timer A
-//#define GPTMTBR(y)			(*((volatile uint32_t*)((GPTM(y))+(0x04C))))				//GPTM Timer B
-//#define GPTMTAV(y)			(*((volatile uint32_t*)((GPTM(y))+(0x050))))				//GPTM Timer A Value	
-//#define GPTMTBV(y)			(*((volatile uint32_t*)((GPTM(y))+(0x054))))				//GPTM Timer B Value
-//#define GPTMRTCPD(y)		(*((volatile uint32_t*)((GPTM(y))+(0x058))))				//GPTM RTC Predivide
-//#define GPTMTAPS(y)			(*((volatile uint32_t*)((GPTM(y))+(0x05C))))				//GPTM Timer A Prescale Snapshot
-//#define GPTMTBPS(y)			(*((volatile uint32_t*)((GPTM(y))+(0x060))))				//GPTM Timer B Prescale Snapshot
-//#define GPTMTAPV(y)			(*((volatile uint32_t*)((GPTM(y))+(0x064))))				//GPTM Timer A Prescale Value
-//#define GPTMTBPV(y)			(*((volatile uint32_t*)((GPTM(y))+(0x068))))				//GPTM Timer B Prescale Value
-//#define GPTMPP(y)				(*((volatile uint32_t*)((GPTM(y))+(0xFC0))))				//GPTM Peripheral Properties	
-//#define RCGCTIMER_REG    *( ( volatile  u32 * ) 0x400FE604 )                // 16/32-Bit General-Purpose Timer Run Mode Clock Gating Control      - page 338
-//#define RCGCWTIMER_REG   *( ( volatile  u32 * ) 0x400FE65C )                // 32/64-Bit Wide General-Purpose Timer Run Mode Clock Gating Control - page 357
-
-/*------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------/
 /- STRUCTS AND UNIONS -------------------------------------/
 /----------------------------------------------------------*/
