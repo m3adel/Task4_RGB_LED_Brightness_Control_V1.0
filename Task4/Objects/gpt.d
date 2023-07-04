@@ -1,5 +1,5 @@
-.\objects\gpt.o: gpt.c
-.\objects\gpt.o: gpt.h
+.\objects\gpt.o: MCAL\gpt\gpt.c
+.\objects\gpt.o: MCAL\gpt\gpt.h
 .\objects\gpt.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h
 .\objects\gpt.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GH6PM.h
 .\objects\gpt.o: C:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h
@@ -10,7 +10,7 @@
 .\objects\gpt.o: C:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h
 .\objects\gpt.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h
 .\objects\gpt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\gpt.o: common.h
-.\objects\gpt.o: mcu_config.h
-.\objects\gpt.o: gpt_lcfg.h
-.\objects\gpt.o: gpt_private.h
+.\objects\gpt.o: MCAL\gpt\../../LIB/common.h
+.\objects\gpt.o: MCAL\gpt\../../LIB/mcu_config.h
+.\objects\gpt.o: MCAL\gpt\gpt_lcfg.h
+.\objects\gpt.o: MCAL\gpt\gpt_private.h

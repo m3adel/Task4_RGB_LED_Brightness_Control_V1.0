@@ -1,9 +1,9 @@
-.\objects\pwm.o: pwm.c
-.\objects\pwm.o: pwm.h
-.\objects\pwm.o: common.h
+.\objects\pwm.o: HAL\pwm\pwm.c
+.\objects\pwm.o: HAL\pwm\pwm.h
+.\objects\pwm.o: HAL\pwm\../../LIB/common.h
 .\objects\pwm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\pwm.o: gpio.h
-.\objects\pwm.o: gpt.h
+.\objects\pwm.o: HAL\pwm\../../MCAL/gpio/gpio.h
+.\objects\pwm.o: HAL\pwm\../../MCAL/gpt/gpt.h
 .\objects\pwm.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h
 .\objects\pwm.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GH6PM.h
 .\objects\pwm.o: C:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h
@@ -13,6 +13,6 @@
 .\objects\pwm.o: C:\Users\lenovo\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h
 .\objects\pwm.o: C:\Users\lenovo\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h
 .\objects\pwm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\pwm.o: mcu_config.h
-.\objects\pwm.o: gpt_lcfg.h
-.\objects\pwm.o: gpt_private.h
+.\objects\pwm.o: HAL\pwm\../../MCAL/gpt/../../LIB/mcu_config.h
+.\objects\pwm.o: HAL\pwm\../../MCAL/gpt/gpt_lcfg.h
+.\objects\pwm.o: HAL\pwm\../../MCAL/gpt/gpt_private.h
