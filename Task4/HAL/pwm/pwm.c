@@ -33,20 +33,38 @@ void PWM_gen(void)
 	GPTM_clearInt( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED  );
 
 }
-void PWM_init (void)
+u8 PWM_init (void)
 {
-		pin1.enm_gpio_pinAmpere = R8;
+	u8 u8_l_ret;
+	pin1.enm_gpio_pinAmpere = R8;
 	pin1.enm_gpio_pinDirection = OUT;
 	pin1.enm_gpio_pinNumber = PWM_Pin1;
 	pin1.enm_gpio_portNumber = PWM_Port1;
 	pin1.enm_gpio_pullUP		=	DISABLE;
 	GPIO_init(pin1);
-	GPTM_initialization( ast_gs_timersLinkConfig[0]);
-	GPTM_setCallback( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, &PWM_gen );
+				
+	if(GPTM_EN_OK == GPTM_initialization( ast_gs_timersLinkConfig[0]))
+	{
+		u8_l_ret = PWM_OKAY;
+	}
+	else
+	{
+		u8_l_ret = PWM_INIT_ERROR;
+	}
+	if(GPTM_EN_OK == GPTM_setCallback( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, &PWM_gen ))
+	{
+		u8_l_ret = PWM_OKAY;
+	}
+	else
+	{
+		u8_l_ret = PWM_INIT_ERROR;
+	}
+	return u8_l_ret;
 }
 
-void PWM_start (uint8_t duty_percent)
+u8 PWM_start (uint8_t duty_percent)
 	{
+	u8 u8_l_ret;
 	u64 u64_temp = 0;
 	u64_temp = (u64)((duty_percent*PWM_PERIOD)*10);
 	PWM_count_ON = u64_temp;
@@ -54,28 +72,90 @@ void PWM_start (uint8_t duty_percent)
 	PWM_count_OFF = u64_temp;
 	PWM_Flag=FALSE;
 	
-	if(PWM_count_ON == 0)
+	if(PWM_count_ON == MILIISECOND_ZERO)
 	{
-		GPIO_write(pin1,LOW);
-		GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED );
+		if(GPIO_OKAY == GPIO_write(pin1,LOW))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+		if(GPTM_EN_OK == GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED ))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
 	}
-	else if(PWM_count_ON == 500000)
+	else if(PWM_count_ON == MILIISECOND_500)
 	{
-		GPIO_write(pin1,HIGH);
-		GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED );
+		if(GPIO_OKAY == GPIO_write(pin1,HIGH))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+		if(GPTM_EN_OK == GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED ))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+		
+		
 	}
 	else
 	{
-	GPTM_setTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, PWM_count_ON, GPTM_EN_TIME_US );
-	GPTM_enableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED );
-	PWM_Flag = FALSE;
-	GPIO_write(pin1,HIGH);
+		if(GPTM_EN_OK == GPTM_setTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED, PWM_count_ON, GPTM_EN_TIME_US ))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+		if(GPTM_EN_OK == GPTM_enableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED ))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+		PWM_Flag = FALSE;
+		if(GPIO_OKAY == GPIO_write(pin1,HIGH))
+		{
+			u8_l_ret = PWM_OKAY;
+		}
+		else
+		{
+			u8_l_ret = PWM_START_ERROR;
+		}
+	
 	}
+	return u8_l_ret;
 }
 
-void PWM_Stop (void)
+u8 PWM_Stop (void)
 {
+	u8 u8_l_ret;
 	//Timer Stop
 	//no_clk;
-	GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED );
+	if(GPTM_EN_OK == GPTM_disableTimer( GPTM_EN_TIMER_0, GPTM_EN_CONCATUNATED ))
+	{
+		u8_l_ret = PWM_OKAY;
+	}
+	else
+	{
+		u8_l_ret = PWM_START_ERROR;
+	}
+	return u8_l_ret;
 }

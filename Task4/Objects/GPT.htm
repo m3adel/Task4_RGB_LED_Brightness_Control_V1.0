@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\GPT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\GPT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Jul 04 04:56:08 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Jul 04 05:22:27 2023
 <BR><P>
-<H3>Maximum Stack Usage =        384 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        392 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 <P>
@@ -354,7 +354,7 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[88]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 392 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1111,7 +1111,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[99]"></a>APP_start</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, app.o(i.APP_start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
+<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_start
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_read
@@ -1230,7 +1230,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> pwm.o(i.PWM_init)
 </UL>
-<P><STRONG><a name="[98]"></a>PWM_init</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, pwm.o(i.PWM_init))
+<P><STRONG><a name="[98]"></a>PWM_init</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, pwm.o(i.PWM_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PWM_init &rArr; GPTM_initialization
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPTM_setCallback
@@ -1240,8 +1240,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_init
 </UL>
 
-<P><STRONG><a name="[9b]"></a>PWM_start</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, pwm.o(i.PWM_start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
+<P><STRONG><a name="[9b]"></a>PWM_start</STRONG> (Thumb, 262 bytes, Stack size 32 bytes, pwm.o(i.PWM_start))
+<BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPTM_setTimer
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPTM_enableTimer
@@ -1462,7 +1462,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[89]"></a>main</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = main &rArr; APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
+<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = main &rArr; APP_start &rArr; PWM_start &rArr; GPTM_setTimer &rArr; __hardfp_pow &rArr; sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_start
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;APP_init
