@@ -393,39 +393,39 @@
           <GroupName>MCAL</GroupName>
           <Files>
             <File>
-              <FileName>gpt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\gpt.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpt.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gpt.h</FilePath>
-            </File>
-            <File>
-              <FileName>gpt_lcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gpt_lcfg.h</FilePath>
-            </File>
-            <File>
-              <FileName>gpt_private.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gpt_private.h</FilePath>
-            </File>
-            <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\gpio.c</FilePath>
+              <FilePath>.\MCAL\gpio\gpio.c</FilePath>
             </File>
             <File>
               <FileName>gpio.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\gpio.h</FilePath>
+              <FilePath>.\MCAL\gpio\gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MCAL\gpt\gpt.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MCAL\gpt\gpt.h</FilePath>
             </File>
             <File>
               <FileName>gpt_lcfg.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\gpt_lcfg.c</FilePath>
+              <FilePath>.\MCAL\gpt\gpt_lcfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpt_lcfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MCAL\gpt\gpt_lcfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpt_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MCAL\gpt\gpt_private.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -435,7 +435,12 @@
             <File>
               <FileName>common.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\common.h</FilePath>
+              <FilePath>.\LIB\common.h</FilePath>
+            </File>
+            <File>
+              <FileName>mcu_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LIB\mcu_config.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -443,34 +448,34 @@
           <GroupName>HAL</GroupName>
           <Files>
             <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\led.c</FilePath>
-            </File>
-            <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\led.h</FilePath>
-            </File>
-            <File>
               <FileName>btn.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\btn.c</FilePath>
+              <FilePath>.\HAL\btn\btn.c</FilePath>
             </File>
             <File>
               <FileName>btn.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\btn.h</FilePath>
+              <FilePath>.\HAL\btn\btn.h</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HAL\led\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\HAL\led\led.h</FilePath>
             </File>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\pwm.c</FilePath>
+              <FilePath>.\HAL\pwm\pwm.c</FilePath>
             </File>
             <File>
               <FileName>pwm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\pwm.h</FilePath>
+              <FilePath>.\HAL\pwm\pwm.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -480,12 +485,12 @@
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\delay.c</FilePath>
+              <FilePath>.\SERVICE\delay\delay.c</FilePath>
             </File>
             <File>
               <FileName>delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\delay.h</FilePath>
+              <FilePath>.\SERVICE\delay\delay.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -495,12 +500,12 @@
             <File>
               <FileName>app.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\app.c</FilePath>
+              <FilePath>.\APP\app.c</FilePath>
             </File>
             <File>
               <FileName>app.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\app.h</FilePath>
+              <FilePath>.\APP\app.h</FilePath>
             </File>
           </Files>
         </Group>

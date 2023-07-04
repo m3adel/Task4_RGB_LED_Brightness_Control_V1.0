@@ -1,10 +1,10 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
-".\objects\gpt.o"
 ".\objects\gpio.o"
+".\objects\gpt.o"
 ".\objects\gpt_lcfg.o"
-".\objects\led.o"
 ".\objects\btn.o"
+".\objects\led.o"
 ".\objects\pwm.o"
 ".\objects\delay.o"
 ".\objects\app.o"
